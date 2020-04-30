@@ -1,0 +1,23 @@
+[
+  {
+    "user": {
+      "firstName": "Demo",
+      "lastName": "User",
+      "mobile": "1234567890",
+      "email": "user_1@phptravels.com",
+      "password": "abcD1234",
+      "confirmedPassword": "abcD1234"
+    }
+  },
+  {
+    "user": {
+      "firstName": "Demo",
+      "lastName": "User",
+      "mobile": "1234567890",
+      "email": "user_2@phptravels.com",
+      "password": "abcD1234",
+      "confirmedPassword": "abcD1234"
+    }
+  }
+]
+

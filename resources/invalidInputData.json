@@ -1,0 +1,83 @@
+[
+  {
+    "user": {
+      "firstName": "demo",
+      "lastName": "User",
+      "mobile": "1234567890",
+      "email": "user_1@phptravels.com",
+      "password": "abcD1234",
+      "confirmedPassword": "abcD1234"
+    }
+  },
+  {
+    "user": {
+      "firstName": "Demo",
+      "lastName": "user",
+      "mobile": "1234567890",
+      "email": "user_2@phptravels.com",
+      "password": "abcD1234",
+      "confirmedPassword": "abcD1234"
+    }
+  },
+  {
+    "user": {
+      "firstName": "Demo",
+      "lastName": "Demo",
+      "mobile": "1234567890",
+      "email": "user_3@phptravels.com",
+      "password": "abcD1234",
+      "confirmedPassword": "abcD1234"
+    }
+  },
+  {
+    "user": {
+      "firstName": "Demo",
+      "lastName": "User",
+      "mobile": "a1234567890",
+      "email": "user_4@phptravels.com",
+      "password": "abcD1234",
+      "confirmedPassword": "abcD1234"
+    }
+  },
+  {
+    "user": {
+      "firstName": "Demo",
+      "lastName": "User",
+      "mobile": "1234567890",
+      "email": "user_5phptravels.com",
+      "password": "abcD1234",
+      "confirmedPassword": "abcD1234"
+    }
+  },
+  {
+    "user": {
+      "firstName": "Demo",
+      "lastName": "User",
+      "mobile": "1234567890",
+      "email": "user_6@phptravels.com",
+      "password": "abcd1234",
+      "confirmedPassword": "abcd1234"
+    }
+  },
+  {
+    "user": {
+      "firstName": "Demo",
+      "lastName": "User",
+      "mobile": "1234567890",
+      "email": "user_7@phptravels.com",
+      "password": "abcD12340",
+      "confirmedPassword": "abcD12340"
+    }
+  },
+  {
+    "user": {
+      "firstName": "Demo",
+      "lastName": "User",
+      "mobile": "1234567890",
+      "email": "user_8@phptravels.com",
+      "password": "abcD1234",
+      "confirmedPassword": "abcD4321"
+    }
+  }
+]
+
