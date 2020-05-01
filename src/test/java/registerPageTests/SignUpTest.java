@@ -7,19 +7,28 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utils.JsonReader;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
-// Listener to use If TestCase Failed (take screenshot) or Succeed
-//
+import static org.testng.Assert.*;
+
+// Listener to use If TestCase Failed (Report with screenshot) or Succeed (Report with text)
 @Listeners({TestNGListenerReporter.class,AllureListenerReporter.class})
 
 public class SignUpTest extends BaseTest {
 
-//    @Test(dataProvider = "SignUpInvalidData",description = "Test full sign up scenario with all invalid cases")
     @Test(dataProvider = "SignUpValidData",description = "Test full sign up scenario with 2 valid cases")
-    public void testFullSignUp(JsonReader.User user) {
+    public void testSignUpWithValidData(JsonReader.User user){
+        signUp(user);
+    }
 
+    @Test(dataProvider = "SignUpInvalidData",description = "Test full sign up scenario with all invalid cases")
+    public void testSignUpWithInvalidData(JsonReader.User user){
+        signUp(user);
+    }
+
+    public void signUp(JsonReader.User user) {
+        if (user == null){
+            fail("Corrupted Inputs");
+        }
         // Check and Set the Sign up candidates conditions.
         assertTrue(registerPage.setFirstNameField(user.firstName), "First letter in first name is small");
         assertTrue( registerPage.setLastNameField(user.lastName) && !user.firstName.equals(user.lastName),

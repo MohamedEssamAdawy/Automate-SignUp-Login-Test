@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.regex.Pattern;
+
 public class RegisterPage {
     private WebDriver driver;
     // Locators to find the sign-up elements
@@ -59,23 +61,19 @@ public class RegisterPage {
         driver.findElement(mobileNumberField).sendKeys(mobile);
 
         // Check that it is a valid mobile number
-        for (int i = 0; i < mobile.length(); i++) {
-            if (!(mobile.charAt(i) == '+' || Character.isDigit(mobile.charAt(i))))
-                return false;
-        }
-        return true;
-
+        String regex = "^[+]*(?:[0-9] ?){6,}[0-9]$";
+        return Pattern.matches(regex,mobile);
     }
     @Step("Set Email Address")
     public boolean setEmailField(String emailAddress) {
         // Check for Empty or Null String
         if (emailAddress == null || emailAddress.length() == 0)
             return false;
-
         driver.findElement(emailField).sendKeys(emailAddress);
 
-        // Check that it is a valid email address
-        return emailAddress.contains("@");
+        // Check that it is a valid email address using regex
+        String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+        return Pattern.matches(regex,emailAddress);
     }
     @Step("Set Password")
     public boolean setPasswordField(String password) {
@@ -83,20 +81,8 @@ public class RegisterPage {
         if (password == null || password.length() == 0)
             return false;
         driver.findElement(passwordField).sendKeys(password);
-        boolean isSmallLetter = false;
-        boolean isCapitalLetter = false;
-        // Check that the password length limited to 8 Char
-        if (password.length() > 8)
-            return false;
-        // Check that the password contains at least one capital and small letter
-        for (int i = 0; i < password.length(); i++) {
-            if (Character.isLowerCase(password.charAt(i))) {
-                isSmallLetter = true;
-            } else if (Character.isUpperCase(password.charAt(i))) {
-                isCapitalLetter = true;
-            }
-        }
-        return isCapitalLetter && isSmallLetter;
+        String regex = "^(?=.*[a-z])(?=.*[A-Z]).{1,8}$";
+        return Pattern.matches(regex, password);
     }
     @Step("Set Confirmed Password")
     public boolean setConfirmPasswordField(String confirmPassword) {

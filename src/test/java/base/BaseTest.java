@@ -48,11 +48,8 @@ public class BaseTest {
         driver.quit();
     }
 
-    @AfterSuite(description = "Open TestNG & Allure reports")
+    @AfterSuite(description = "Open Allure reports")
     public void openReports() throws IOException, InterruptedException {
-        // Open TestNG Report
-        String testNGReport = System.getProperty("user.dir") + "\\test-output\\index.html";
-        Desktop.getDesktop().open(new File(testNGReport));
         // Open Allure Report
         String allureFolderPath = System.getProperty("user.dir");
         System.out.println(allureFolderPath);
@@ -64,11 +61,10 @@ public class BaseTest {
     // Setup Chrome options
     private ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
-//        Run test cases without open the browser
-//        options.addArguments("headless");
+        options.addArguments("start-maximized"); // Start Chrome maximized
+//        options.addArguments("headless");      // Run test cases without open the browser
         options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-        options.setExperimentalOption("useAutomationExtension", false);
+        options.setExperimentalOption("useAutomationExtension", false); // Hide Automation Bar
         return options;
     }
 
