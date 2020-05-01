@@ -169,8 +169,8 @@ In case you did not want to use Allure Report, TestNG default report also availa
 [**JsonReader**]:../master/src/main/java/utils/JsonReader.java
 [validInputData.json]:../master/resources/validInputData.json
 [invalidInputData.json]:../master/resources/invalidInputData.json
-[**signUpResponse folder**]:..tree/master/resources/signUpResponse
+[**signUpResponse folder**]:../../tree/master/resources/signUpResponse
 [**EventReporter**]:../master/src/main/java/utils/EventReporter.java
 [**AllureListenerReporter**]:../master/src/test/java/base/AllureListenerReporter.java
 [**TestNGListenerReporter**]:../master/src/test/java/base/TestNGListenerReporter.java
-[**screenshots folder**]:..tree/master/resources/screenshots
+[**screenshots folder**]:../../tree/master/resources/screenshots
