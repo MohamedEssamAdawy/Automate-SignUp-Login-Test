@@ -44,7 +44,7 @@ In this section you will be able to run tests and open the reports as well.
     }
     ```
 
-  - test with invalid data "*negative testing*"
+- test with invalid data "*negative testing*"
 
     ```java
     @Test(dataProvider = "SignUpInvalidData",description = "Test full sign up scenario with all invalid cases")
@@ -83,6 +83,13 @@ allure serve allure-results
 ```
 
 > If you interested to know more information, go to [Project Features](#allurelistenerreporter)
+
+### Video for tests running
+
+You can find a video of the tests running on my youtube channel.
+
+[![Automate Sign up and Log in with Selenium and Java](http://img.youtube.com/vi/DvbGjesU01o/0.jpg)](http://www.youtube.com/watch?v=DvbGjesU01o "Automate Sign up and Log in with Selenium and Java")
+
 
 ## Project Dependencies
 

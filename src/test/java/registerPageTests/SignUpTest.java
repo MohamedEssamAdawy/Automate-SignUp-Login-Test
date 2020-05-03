@@ -8,12 +8,16 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utils.JsonReader;
 
+import java.util.ArrayList;
+
 import static org.testng.Assert.*;
 
 // Listener to use If TestCase Failed (Report with screenshot) or Succeed (Report with text)
 @Listeners({TestNGListenerReporter.class,AllureListenerReporter.class})
 
 public class SignUpTest extends BaseTest {
+    // To Check that every mail is unique.
+    ArrayList<String> emailList = new ArrayList<>();
 
     @Test(dataProvider = "SignUpValidData",description = "Test full sign up scenario with 2 valid cases")
     public void testSignUpWithValidData(JsonReader.User user){
@@ -35,6 +39,7 @@ public class SignUpTest extends BaseTest {
                 "First letter in last name is small OR lastName equals firstName");
         assertTrue(registerPage.setMobileNumberField(user.mobile), "Mobile number must be Digits and + sign only");
         assertTrue(registerPage.setEmailField(user.email), "Email must contain @");
+        assertTrue(checkMail(emailList,user.email), "Email must be unique, Email used before");
         assertTrue(registerPage.setPasswordField(user.password), "Wrong password format, password must be less than 8 characters and contain at least one small letter and one capital letter.");
         assertTrue( registerPage.setConfirmPasswordField(user.confirmed) && user.password.equals(user.confirmed),
                 "Confirmed password not equal password");
@@ -64,6 +69,14 @@ public class SignUpTest extends BaseTest {
         // Check if the Login completed correctly.
         assertEquals(accountPage.getGreetingMsg(),"Hi, "+user.firstName +" "+user.lastName, "Login not complete successfully");
         accountPage.selectLogOutFromDropDown();
+    }
+
+    public boolean checkMail(ArrayList<String> emailList , String email){
+        if(emailList != null && emailList.contains(email)) {
+            return false;
+        }
+        emailList.add(email);
+        return true;
     }
 
     @DataProvider(name = "SignUpValidData")

@@ -56,7 +56,17 @@
       "mobile": "1234567890",
       "email": "user_6@phptravels.com",
       "password": "abcd1234",
-      "confirmedPassword": "abcd1234"
+      "confirmedPassword": "abcD1234"
+    }
+  },
+  {
+    "user": {
+      "firstName": "Demo",
+      "lastName": "User",
+      "mobile": "1234567890",
+      "email": "user_6@phptravels.com",
+      "password": "abcD1234",
+      "confirmedPassword": "abcD1234"
     }
   },
   {
@@ -65,6 +75,16 @@
       "lastName": "User",
       "mobile": "1234567890",
       "email": "user_7@phptravels.com",
+      "password": "abcd1234",
+      "confirmedPassword": "abcd1234"
+    }
+  },
+  {
+    "user": {
+      "firstName": "Demo",
+      "lastName": "User",
+      "mobile": "1234567890",
+      "email": "user_8@phptravels.com",
       "password": "abcD12340",
       "confirmedPassword": "abcD12340"
     }
@@ -74,7 +94,7 @@
       "firstName": "Demo",
       "lastName": "User",
       "mobile": "1234567890",
-      "email": "user_8@phptravels.com",
+      "email": "user_9@phptravels.com",
       "password": "abcD1234",
       "confirmedPassword": "abcD4321"
     }
