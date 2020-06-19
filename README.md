@@ -1,4 +1,4 @@
-# PixelLogicTask
+# Automate SignUp & Login Test
 
 This repository includes a full automate script to sign up on <http://phptravels.net/register>.
 
